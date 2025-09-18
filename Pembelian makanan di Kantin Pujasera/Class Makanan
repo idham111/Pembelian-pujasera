@@ -1,0 +1,23 @@
+public class Makanan {
+    private String nama;
+    private int harga;
+
+    public Makanan(String nama, int harga) {
+        this.nama = nama;
+        this.harga = harga;
+    }
+
+    // Getter
+    public String getNama() { return nama; }
+    public int getHarga() { return harga; }
+
+    // Setter
+    public void setNama(String nama) { this.nama = nama; }
+    public void setHarga(int harga) { 
+        if(harga > 0) this.harga = harga; 
+    }
+
+    public void tampilkanInfo() {
+        System.out.println("Makanan: " + nama + " | Harga: Rp" + harga);
+    }
+}

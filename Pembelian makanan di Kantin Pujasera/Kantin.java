@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class Kantin {
+    private ArrayList<Makanan> daftarMakanan = new ArrayList<>();
+
+    public void tambahMakanan(Makanan m) {
+        daftarMakanan.add(m);
+        System.out.println("Makanan berhasil ditambahkan!");
+    }
+
+    public void tampilkanMenu() {
+        if (daftarMakanan.isEmpty()) {
+            System.out.println("Menu kosong.");
+        } else {
+            for (int i = 0; i < daftarMakanan.size(); i++) {
+                System.out.print((i+1) + ". ");
+                daftarMakanan.get(i).tampilkanInfo();
+            }
+        }
+    }
+
+    public int hitungTotal(int[] pilihan) {
+        int total = 0;
+        for (int idx : pilihan) {
+            if (idx > 0 && idx <= daftarMakanan.size()) {
+                total += daftarMakanan.get(idx-1).getHarga();
+            }
+        }
+        return total;
+    }
+
+    
+}
